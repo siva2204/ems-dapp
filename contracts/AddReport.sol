@@ -9,7 +9,7 @@ contract AddReport is Reports {
         string calldata _title,
         string calldata _report,
         string calldata _location,
-        uint256 _fileHash
+        string calldata _fileHash
     ) external {
         reports.push(
             Report({

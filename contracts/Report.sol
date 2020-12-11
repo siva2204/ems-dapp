@@ -8,7 +8,7 @@ contract Reports {
         string title;
         string report;
         string location;
-        uint256 fileHash;
+        string fileHash;
         uint256 upVote;
         uint256 downVote;
     }
