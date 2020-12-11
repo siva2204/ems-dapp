@@ -5,6 +5,7 @@ contract Reports {
     uint256 public totalReports;
 
     struct Report {
+        uint256 id;
         string title;
         string report;
         string location;
@@ -13,7 +14,7 @@ contract Reports {
         uint256 downVote;
     }
 
-    Report[] public reports;
+    mapping(uint256 => Report) public reports;
 
     constructor() public {
         totalReports = 0;
