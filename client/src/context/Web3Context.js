@@ -20,7 +20,7 @@ function Web3ContextProvider(props) {
     );
     setins(instance);
     setweb3(web3Instance);
-    setaccts(accounts);
+    setaccts(accounts[0]);
   }
 
   useEffect(() => {

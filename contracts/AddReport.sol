@@ -19,7 +19,7 @@ contract AddReport is Reports {
         string memory _location,
         string memory _fileHash
     ) public {
-        require(bytes(_fileHash) > 0 && bytes(_title) > 0);
+        require(bytes(_fileHash).length > 0 && bytes(_title).length > 0);
 
         totalReports++;
 
