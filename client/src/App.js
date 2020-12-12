@@ -11,11 +11,13 @@ function App() {
         <Switch>
           <Route exact path="/">
             {/* <Home /> */}
-            <PostReportForm />
             <p>home</p>
           </Route>
           <Route exact path="/post">
             <p>post page</p>
+          </Route>
+          <Route exact path="/uploadpost">
+            <PostReportForm />
           </Route>
           <Route exact path="/post/:id">
             <p>hey im the report</p>
