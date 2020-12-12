@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Web3ContextProvider from "./context/Web3Context";
+import PostReportForm from "./PostReportForm";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
         <Switch>
           <Route exact path="/">
             {/* <Home /> */}
+            <PostReportForm />
             <p>home</p>
           </Route>
           <Route exact path="/post">
