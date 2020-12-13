@@ -1,8 +1,9 @@
 // SPDX-License-Identifier: MIT
-pragma solidity >=0.4.21 <0.7.0;
+pragma solidity >=0.5.16;
 import "./Report.sol";
+import "./Voter.sol";
 
-contract AddReport is Reports {
+contract AddReport is Reports, Voters {
     event reportUploaded(
         uint256 _id,
         string title,
@@ -20,9 +21,7 @@ contract AddReport is Reports {
         string memory _fileHash
     ) public {
         require(bytes(_fileHash).length > 0 && bytes(_title).length > 0);
-
         totalReports++;
-
         reports[totalReports] = Report({
             id: totalReports,
             title: _title,
@@ -42,16 +41,49 @@ contract AddReport is Reports {
             0,
             0
         );
-        totalReports++;
     }
 
-    function upVoteReport(uint256 _id) external returns (bool) {
-        reports[_id].upVote++;
-        return true;
+    function upVoteReport(uint256 _id) public isRegistered {
+        Voter storage myVoter = voters[msg.sender];
+        if (initialiseVote(myVoter)) {
+            reports[_id].upVote++;
+        } else {
+            revert();
+        }
     }
 
-    function downVoteReport(uint256 _id) external returns (bool) {
-        reports[_id].downVote++;
-        return true;
+    function downVoteReport(uint256 _id) public isRegistered {
+        Voter storage myVoter = voters[msg.sender];
+        if (initialiseVote(myVoter)) {
+            reports[_id].downVote++;
+        } else {
+            revert();
+        }
+    }
+
+    function voterIsReady(Voter storage _voter) internal view returns (bool) {
+        return (_voter.readyTime <= block.timestamp);
+    }
+
+    function initialiseVote(Voter storage _voter) internal returns (bool) {
+        if (_voter.remainingVotes <= 0) {
+            if (voterIsReady(_voter)) {
+                _voter.remainingVotes = 4;
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            _voter.remainingVotes--;
+            if (_voter.remainingVotes == 0) {
+                _voter.readyTime = uint256(block.timestamp + coolDownTime);
+            }
+            return true;
+        }
+    }
+
+    modifier isRegistered() {
+        require(voters[msg.sender].isRegistered);
+        _;
     }
 }
