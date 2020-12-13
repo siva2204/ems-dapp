@@ -4,7 +4,6 @@ import Web3ContextProvider from "./context/Web3Context";
 import PostReportForm from "./components/Form/PostReportForm";
 import Home from "./components/Home/Home";
 import Navbar from "./components/Navbar/Navbar";
-import { Post } from "./components/Posts/post";
 import { AllPost } from "./components/Posts/PostList";
 
 function App() {
@@ -21,10 +20,6 @@ function App() {
           </Route>
           <Route exact path="/uploadpost">
             <PostReportForm />
-          </Route>
-          <Route exact path="/post/:id">
-            <p>hey im the report</p>
-            <Post></Post>
           </Route>
         </Switch>
       </Router>

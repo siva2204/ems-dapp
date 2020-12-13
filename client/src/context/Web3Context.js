@@ -8,6 +8,7 @@ function Web3ContextProvider(props) {
   const [web3, setweb3] = useState({});
   const [accts, setaccts] = useState({});
   const [ins, setins] = useState({});
+  const [isRegistered, setIsRegistered] = useState(false);
 
   async function web3Fetch() {
     const web3Instance = await getWeb3();
@@ -18,6 +19,8 @@ function Web3ContextProvider(props) {
       AddReport.abi,
       deployedNetwork && deployedNetwork.address
     );
+    const response = await instance.methods.voters(accounts[0]).call();
+    setIsRegistered(response.isRegistered);
     setins(instance);
     setweb3(web3Instance);
     setaccts(accounts[0]);
@@ -28,7 +31,7 @@ function Web3ContextProvider(props) {
   }, []);
 
   return (
-    <Web3Context.Provider value={{ web3, accts, ins }}>
+    <Web3Context.Provider value={{ web3, accts, ins, isRegistered }}>
       {props.children}
     </Web3Context.Provider>
   );

@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
-
+import { Web3Context } from "../../context/Web3Context";
 import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
@@ -24,32 +24,50 @@ const useStyles = makeStyles((theme) => ({
 
 function Navbar() {
   const classes = useStyles();
+  const { isRegistered, accts, ins } = useContext(Web3Context);
+
+  function registerButtonValue() {
+    return isRegistered ? accts : "Register";
+  }
+
+  const [buttonHtml, setButtonHtml] = useState(registerButtonValue);
+
+  async function registerVoter() {
+    if (!isRegistered) {
+      try {
+        const response = await ins.methods
+          .registerVoter()
+          .send({ from: accts });
+        setButtonHtml("Welcome");
+      } catch (error) {
+        console.log(error);
+      }
+    }
+  }
 
   return (
     <AppBar position="static" className="bar">
       <Toolbar>
         <Typography variant="h3" className={classes.title}>
-          <Link to="/">
+          <Link className="link" to="/">
             <Button color="inherit" className="text">
               Election Proctor
             </Button>
           </Link>
         </Typography>
-        <Link to="/post">
+        <Link className="link" to="/post">
           <Button color="inherit" className="text">
             Feeds
           </Button>
         </Link>
-        <Link to="/uploadpost">
+        <Link className="link" to="/uploadpost">
           <Button color="inherit" className="text">
             Report
           </Button>
         </Link>
-        <Link>
-          <Button color="inherit" className="text">
-            Register
-          </Button>
-        </Link>
+        <Button onClick={registerVoter} color="inherit" className="text">
+          {buttonHtml}
+        </Button>
       </Toolbar>
     </AppBar>
   );
