@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Web3Context } from "../../context/Web3Context";
 import { makeStyles } from "@material-ui/core/styles";
@@ -26,19 +26,13 @@ function Navbar() {
   const classes = useStyles();
   const { isRegistered, accts, ins } = useContext(Web3Context);
 
-  function registerButtonValue() {
-    return isRegistered ? accts : "Register";
-  }
-
-  const [buttonHtml, setButtonHtml] = useState(registerButtonValue);
-
   async function registerVoter() {
     if (!isRegistered) {
       try {
         const response = await ins.methods
           .registerVoter()
           .send({ from: accts });
-        setButtonHtml("Welcome");
+        alert("registered sucessfully!");
       } catch (error) {
         console.log(error);
       }
@@ -65,9 +59,15 @@ function Navbar() {
             Report
           </Button>
         </Link>
-        <Button onClick={registerVoter} color="inherit" className="text">
-          {buttonHtml}
-        </Button>
+        {!isRegistered ? (
+          <Button onClick={registerVoter} color="inherit" className="text">
+            Register
+          </Button>
+        ) : (
+          <Button color="inherit" className="text">
+            Welcome!
+          </Button>
+        )}
       </Toolbar>
     </AppBar>
   );
