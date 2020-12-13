@@ -1,0 +1,15 @@
+#thumbsDown {
+  float: right;
+  margin-right: 20px;
+  margin-left:10px;
+  position: relative;
+}
+
+#btnn {
+  text-align: right;
+}
+
+.postList {
+  margin : 30px;
+  text-align: center;
+}
