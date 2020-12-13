@@ -2,16 +2,17 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Web3ContextProvider from "./context/Web3Context";
 import PostReportForm from "./PostReportForm";
+import Home from "./components/Home/Home";
+import Navbar from "./components/Navbar/Navbar";
 
 function App() {
   return (
     <Web3ContextProvider>
       <Router>
-        {/* <Navbar /> */}
+        <Navbar />
         <Switch>
           <Route exact path="/">
-            {/* <Home /> */}
-            <p>home</p>
+            <Home />
           </Route>
           <Route exact path="/post">
             <p>post page</p>

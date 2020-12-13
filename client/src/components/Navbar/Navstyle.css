@@ -1,0 +1,13 @@
+.bar {
+
+    background-color: #ff3333 !important;
+}
+
+.text {
+
+    font-size: 19px !important;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif !important;
+    font-weight: 700 !important;
+    margin-left: 1vw !important;
+    margin-right: 2vw !important;
+}
