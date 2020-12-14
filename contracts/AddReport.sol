@@ -43,21 +43,23 @@ contract AddReport is Reports, Voters {
         );
     }
 
-    function upVoteReport(uint256 _id) public isRegistered {
+    function upVoteReport(uint256 _id) public isRegistered returns (uint256) {
         Voter storage myVoter = voters[msg.sender];
         if (initialiseVote(myVoter)) {
             reports[_id].upVote++;
+            return reports[_id].upVote;
         } else {
-            revert();
+            revert("something Went wrong");
         }
     }
 
-    function downVoteReport(uint256 _id) public isRegistered {
+    function downVoteReport(uint256 _id) public isRegistered returns (uint256) {
         Voter storage myVoter = voters[msg.sender];
         if (initialiseVote(myVoter)) {
             reports[_id].downVote++;
+            return reports[_id].downVote++;
         } else {
-            revert();
+            revert("something Went wrong");
         }
     }
 

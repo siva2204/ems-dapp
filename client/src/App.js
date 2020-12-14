@@ -4,7 +4,8 @@ import Web3ContextProvider from "./context/Web3Context";
 import PostReportForm from "./components/Form/PostReportForm";
 import Home from "./components/Home/Home";
 import Navbar from "./components/Navbar/Navbar";
-import { AllPost } from "./components/Posts/PostList";
+import { PostList } from "./components/Posts/PostList";
+import Report from "./components/Report/Report";
 
 function App() {
   return (
@@ -15,8 +16,11 @@ function App() {
           <Route exact path="/">
             <Home />
           </Route>
-          <Route exact path="/post">
-            <AllPost />
+          <Route exact path="/feed">
+            <PostList />
+          </Route>
+          <Route exact path="/feed/:id">
+            <Report />
           </Route>
           <Route exact path="/uploadpost">
             <PostReportForm />

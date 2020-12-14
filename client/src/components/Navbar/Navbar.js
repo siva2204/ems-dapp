@@ -49,7 +49,7 @@ function Navbar() {
             </Button>
           </Link>
         </Typography>
-        <Link className="link" to="/post">
+        <Link className="link" to="/feed">
           <Button color="inherit" className="text">
             Feeds
           </Button>
