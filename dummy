@@ -7,7 +7,7 @@ In this README:
 
 - [Introduction](#introduction)
 - [Installation](#installation)
-
+- [Contributing Guidelines](#Contributing-Guidelines)
 
 ## Introduction
 
@@ -37,4 +37,3 @@ npm i
 npm start
 
 ```
-Install metamask extension
