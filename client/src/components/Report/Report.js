@@ -29,7 +29,7 @@ export default function Report() {
     try {
       await ins.methods.downVoteReport(id).send({ from: accts });
       const response = await ins.methods.reports(id).call();
-      setLike(response.downVote);
+      setDisLike(response.downVote);
     } catch (error) {
       console.log(error);
     }
