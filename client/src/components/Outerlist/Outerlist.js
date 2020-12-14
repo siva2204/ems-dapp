@@ -3,14 +3,16 @@ import "./outerlist.css";
 import { Link } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
-import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
-import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
+
+import ThumbUpIcon from "@material-ui/icons/ThumbUp";
+import ThumbDownIcon from "@material-ui/icons/ThumbDown";
 
 const useStyles = makeStyles({
   root: {
-    minWidth: 675,
+    minWidth: 275,
+    maxWidth: 400,
   },
   bullet: {
     display: "inline-block",
@@ -22,6 +24,8 @@ const useStyles = makeStyles({
   },
   pos: {
     marginBottom: 12,
+    marginTop: 20,
+    fontSize: 20,
   },
 });
 
@@ -41,7 +45,14 @@ function Outerlist({ title, location, upVote, downVote, id }) {
                 {location}
               </Typography>
               <Typography variant="body2" component="p">
-                No of Likes: {upVote} ---- No of Dislikes : {downVote}
+                <span>
+                  <ThumbUpIcon className="asd"></ThumbUpIcon> <p>{upVote}</p>
+                </span>
+
+                <span>
+                  <ThumbDownIcon className="asd"></ThumbDownIcon>{" "}
+                  <p>{downVote}</p>
+                </span>
               </Typography>
             </CardContent>
           </Link>

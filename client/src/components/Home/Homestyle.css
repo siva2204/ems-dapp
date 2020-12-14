@@ -1,93 +1,85 @@
 .a {
-    
-    width: 100vw;
-    background-color: #f6f6f6;
-    display: flex;
-    flex-direction: column;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
 }
 
 .aa {
-    display: flex;
-    justify-content: center;
-    margin-top: 5vh;
+  display: flex;
+  justify-content: center;
+  margin-top: 5vh;
 }
 
 .log {
-    border-radius: 50%;
-    max-width: 400px;
+  border-radius: 50%;
+  max-width: 400px;
 }
 
 .ab {
-
-     text-align: center;
-     margin-top: 6vh;
-     font-size: 80px;
-     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-     font-weight: 900;
+  text-align: center;
+  margin-top: 6vh;
+  font-size: 80px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-weight: 900;
 }
 
 .abbb {
-
-    text-align: center;
-    margin-top: 4vh;
-    font-size: 40px;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-weight: 900;
+  text-align: center;
+  margin-top: 4vh;
+  font-size: 40px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-weight: 900;
 }
 
 .ac {
-
-    margin-top: 10vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
+  margin-top: 10vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .imgaa {
-    max-width: 25vw;
+  max-width: 25vw;
 }
 
 .imga {
-    margin-left: 5vw;
+  margin-left: 5vw;
 }
 
 .texta {
-    margin-left: 5vw;
-    max-width: 25vw;
-    font-size: 20px;
-     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  margin-left: 5vw;
+  max-width: 25vw;
+  font-size: 20px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 .details {
-    max-width: 30vw;
-    margin-top: 5vh;
+  max-width: 30vw;
+  margin-top: 5vh;
 }
 .aca {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    margin-top: 3vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 3vh;
 }
 
 .movingd {
-
-    font-size: 70px;
-     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-     font-weight: 900;
-     margin-top: 30vh;
-     margin-left: 15vw;
-
+  font-size: 70px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-weight: 900;
+  margin-top: 30vh;
+  margin-left: 15vw;
 }
 .acb {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    margin-top: 3vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 3vh;
 }
 
 .acc {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    margin-top: 3vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 3vh;
 }

@@ -44,7 +44,7 @@ function PostList(props) {
       );
     });
 
-    return <>{posts}</>;
+    return <div className="row">{posts}</div>;
   } else if (post == 0) {
     return <h1>No Reports!</h1>;
   } else return <Spinner />;
