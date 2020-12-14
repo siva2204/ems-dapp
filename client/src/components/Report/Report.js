@@ -5,6 +5,7 @@ import axios from "axios";
 import LikeButton from "./LikeButton";
 import DisLikeButton from "./DisLikeButton";
 import Spinner from "../Spinner/Spinner";
+import "./report.css";
 
 export default function Report() {
   let { id } = useParams();
@@ -48,7 +49,7 @@ export default function Report() {
 
       if (myFileFormat === "video/mp4") {
         let media = (
-          <video width="320" height="240" controls>
+          <video width="400" height="300" controls>
             <source
               src={`https://ipfs.infura.io/ipfs/${response.fileHash}`}
               type="video/mp4"
@@ -68,8 +69,8 @@ export default function Report() {
           >
             <img
               src={`https://ipfs.infura.io/ipfs/${response.fileHash}`}
-              width="320"
-              height="240"
+              width="400"
+              height="300"
             ></img>
           </a>
         );
@@ -84,11 +85,11 @@ export default function Report() {
 
   return (
     <>
-      <h1>{report.title}</h1>
-      <span>{report.location}</span>
-      <div>{Media ? Media : <Spinner />}</div>
-      <p>{report.report}</p>
-      <div>
+      <h1 id="blog-heading">{report.title}</h1>
+      <p id="blog-location">{report.location}</p>
+      <div id="file-con">{Media ? Media : <Spinner />}</div>
+      <p id="blog-desc">{report.report}</p>
+      <div id="button-display">
         <DisLikeButton dislike={disLike} downVote={downVote} />
         <LikeButton like={like} upVote={upVote} />
       </div>

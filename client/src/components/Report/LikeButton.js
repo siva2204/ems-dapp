@@ -1,10 +1,12 @@
 import React from "react";
 
-export default function LikeButton({like,upVote}) {
+export default function LikeButton({ like, upVote }) {
   return (
-  <div>
-  <strong>{like}</strong>
-  <button onClick={upVote}>Like</button>
-  </div>
+    <div id="button">
+      <strong className="no">{like}</strong>
+      <button className="btn success" onClick={upVote}>
+        Like
+      </button>
+    </div>
   );
 }
