@@ -4,6 +4,7 @@ import { Web3Context } from "../../context/Web3Context";
 import axios from "axios";
 import LikeButton from "./LikeButton";
 import DisLikeButton from "./DisLikeButton";
+import Spinner from "../Spinner/Spinner";
 
 export default function Report() {
   let { id } = useParams();
@@ -85,7 +86,7 @@ export default function Report() {
     <>
       <h1>{report.title}</h1>
       <span>{report.location}</span>
-      <div>{Media ? Media : "loading"}</div>
+      <div>{Media ? Media : <Spinner />}</div>
       <p>{report.report}</p>
       <div>
         <DisLikeButton dislike={disLike} downVote={downVote} />
