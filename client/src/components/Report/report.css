@@ -1,0 +1,29 @@
+.a {
+    
+    width: 100vw;
+    background-color: #f6f6f6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.aa {
+
+    font-weight: 900;
+    margin-top: 5vh;
+    margin-bottom: 3vh;
+}
+
+.ab {
+
+    margin-top: 1vh;
+    margin-bottom: 2vh;
+}
+
+.ac {
+
+    margin-top: 2vh;
+    display: flex;
+    flex-direction: row;
+    margin:1vh;
+}

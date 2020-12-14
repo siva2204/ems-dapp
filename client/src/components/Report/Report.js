@@ -5,6 +5,7 @@ import axios from "axios";
 import LikeButton from "./LikeButton";
 import DisLikeButton from "./DisLikeButton";
 import Spinner from "../Spinner/Spinner";
+import './report.css';
 
 export default function Report() {
   let { id } = useParams();
@@ -83,15 +84,19 @@ export default function Report() {
   }, [ins]);
 
   return (
-    <>
-      <h1>{report.title}</h1>
+    <div className="a">
+      
+      <h1 className="aa">{report.title}</h1>
       <span>{report.location}</span>
-      <div>{Media ? Media : <Spinner />}</div>
+      
+      <div className="ab">{Media ? Media : <Spinner />}</div>
       <p>{report.report}</p>
-      <div>
+      
+      <div className="ac">
         <DisLikeButton dislike={disLike} downVote={downVote} />
         <LikeButton like={like} upVote={upVote} />
       </div>
-    </>
+    
+    </div>
   );
 }
